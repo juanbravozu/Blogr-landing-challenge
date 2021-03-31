@@ -1,0 +1,15 @@
+@import './base/reset';
+@import './abstracts/colors';
+@import './base/typography';
+@import './layouts/wrapper';
+@import './layouts/nav';
+@import './layouts/header';
+@import './components/btn';
+
+body {
+    position: relative;
+}
+
+html {
+    font-size: 62.5%;
+}

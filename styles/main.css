@@ -1,0 +1,170 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+h1 {
+  font-family: Overpass, sans-serif;
+  font-weight: 600;
+  font-size: 6rem;
+}
+
+h2 {
+  font-family: Overpass, sans-serif;
+  font-weight: 600;
+  font-size: 3.7rem;
+}
+
+h3 {
+  font-family: Overpass, sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+}
+
+h4, li, button, a {
+  font-family: Ubuntu, sans-serif;
+  font-size: 1.6rem;
+}
+
+p {
+  font-family: Overpass, sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 160px;
+  width: 100%;
+  color: white;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 55px;
+}
+
+nav ul li {
+  position: relative;
+  margin: 0 30px;
+}
+
+nav ul li::after {
+  content: '';
+  position: absolute;
+  display: block;
+  right: -2rem;
+  top: 30%;
+  width: 1.2rem;
+  height: 0.7rem;
+  background-image: url("../../images/icon-arrow-light.svg");
+  background-size: cover;
+}
+
+nav div {
+  margin-left: auto;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 240px 0 0 150px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));
+  background-image: linear-gradient(90deg, #FF8F70 0%, #FF3D54 100%);
+}
+
+.btn {
+  padding: 20px;
+  border-radius: 1000px;
+  min-width: 135px;
+  background-color: white;
+  color: #ff525d;
+}
+
+body {
+  position: relative;
+}
+
+html {
+  font-size: 62.5%;
+}
+/*# sourceMappingURL=main.css.map */
