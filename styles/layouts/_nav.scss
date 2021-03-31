@@ -13,6 +13,10 @@ nav {
     max-width: 1440px;
     color: $light;
 
+    @media screen and (min-width: 1440px) {
+        padding: 40px 144px;
+    }
+
     ul {
         display: flex;
         margin: 0 55px;
