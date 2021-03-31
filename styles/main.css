@@ -95,16 +95,23 @@ p {
           justify-content: space-between;
 }
 
-nav {
+header {
   position: absolute;
+  width: 100%;
+}
+
+nav {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 40px 160px;
+  padding: 40px 10%;
+  margin: 0 auto;
   width: 100%;
+  max-width: 1440px;
   color: white;
 }
 
@@ -118,6 +125,7 @@ nav ul {
 nav ul li {
   position: relative;
   margin: 0 30px;
+  cursor: pointer;
 }
 
 nav ul li::after {
@@ -133,10 +141,24 @@ nav ul li::after {
 }
 
 nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: auto;
 }
 
-header {
+nav a {
+  color: white;
+}
+
+nav a:first-child {
+  margin-right: 30px;
+}
+
+#banner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,17 +169,47 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 240px 0 0 150px;
+  padding: 240px 0 150px 0;
   background-image: -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));
   background-image: linear-gradient(90deg, #FF8F70 0%, #FF3D54 100%);
+  background-image: url("../../images/bg-pattern-intro.svg"), -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));
+  background-image: url("../../images/bg-pattern-intro.svg"), linear-gradient(90deg, #FF8F70 0%, #FF3D54 100%);
+  background-position: 20% center, 0 0;
+  border-bottom-left-radius: 100px;
+  color: white;
+}
+
+#banner p {
+  font-size: 2rem;
+  margin: 30px;
+}
+
+#banner div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#banner div button {
+  margin: 0 10px;
 }
 
 .btn {
-  padding: 20px;
+  display: block;
+  padding: 15px 0;
   border-radius: 1000px;
   min-width: 135px;
   background-color: white;
+  border: none;
   color: #ff525d;
+  text-align: center;
+  font-weight: 700;
+}
+
+.btn--outline {
+  background: transparent;
+  border: white 2px solid;
+  color: white;
 }
 
 body {

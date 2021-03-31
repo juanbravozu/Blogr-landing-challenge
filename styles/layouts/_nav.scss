@@ -1,18 +1,26 @@
-nav {
+header {
     position: absolute;
+    width: 100%;
+}
+
+nav {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 40px 160px;
+    padding: 40px 10%;
+    margin: 0 auto;
     width: 100%;
+    max-width: 1440px;
     color: $light;
 
     ul {
         display: flex;
         margin: 0 55px;
 
-        & li {
+        li {
             position: relative;
             margin: 0 30px;
+            cursor: pointer;
 
             &::after {
                 content: '';
@@ -29,6 +37,16 @@ nav {
     }
 
     div {
+        display: flex;
+        align-items: center;
         margin-left: auto;
+    }
+
+    a {
+        color: $light;
+
+        &:first-child {
+            margin-right: 30px;
+        }
     }
 }
