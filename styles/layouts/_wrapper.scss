@@ -65,4 +65,18 @@ section {
     border-bottom-left-radius: 100px;
     background-image: $blue-gradient;
     color: $light;
+
+    img {
+        top: 15px;
+    }
+}
+
+#tools {
+    padding: 200px 10%;
+    color: $blue;
+
+    img {
+        transform: scale(1.5);
+        left: -10%;
+    }
 }

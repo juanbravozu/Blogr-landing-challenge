@@ -166,6 +166,21 @@ section {
   color: white;
 }
 
+#infrastructure img {
+  top: 15px;
+}
+
+#tools {
+  padding: 200px 10%;
+  color: #1f3f5b;
+}
+
+#tools img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  left: -10%;
+}
+
 header {
   position: absolute;
   width: 100%;
