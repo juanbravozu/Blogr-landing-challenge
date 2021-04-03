@@ -3,7 +3,7 @@ footer {
     border-top-right-radius: 100px;
     background-color: $dark;
 
-    @media screen and (min-width: 1440px) {
+    @include respond-to('huge') {
         padding: 80px 144px;
     }
 

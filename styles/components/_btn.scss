@@ -9,10 +9,27 @@
     text-align: center;
     font-weight: 700;
     cursor: pointer;
+    transition-property: background-color color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+
+    &:hover {
+        background-color: $light-red;
+        color: $light;
+    }
 
     &--outline {
         background: transparent;
         border: $light 2px solid;
         color: $light;
+
+        &:hover {
+            background-color: $light;
+            color: $light-red;
+        }
     }
+}
+
+a:not(.btn):hover {
+    text-decoration: underline;
 }

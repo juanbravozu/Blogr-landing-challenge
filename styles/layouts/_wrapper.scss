@@ -30,7 +30,7 @@ section {
     padding-left: 10%;
     padding-right: 10%;
 
-    @media screen and (min-width: 1440px) {
+    @include respond-to('huge') {
         padding-left: 144px;
         padding-right: 144px;
     }

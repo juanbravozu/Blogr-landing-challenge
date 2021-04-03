@@ -13,14 +13,28 @@ nav {
     max-width: 1440px;
     color: $light;
 
-    @media screen and (min-width: 1440px) {
+    @include respond-to('huge') {
         padding: 40px 144px;
     }
 
-    ul {
-        display: flex;
-        margin: 0 55px;
+    @include respond-to('large') {
+        ul {
+            display: flex;
+            margin: 0 55px;
 
+            .submenu {
+                position: absolute;
+                display: block;
+                bottom: -20px;
+
+                a{
+                    display: block;
+                }
+            }
+        }        
+    }
+
+    ul {
         li {
             position: relative;
             margin: 0 30px;
@@ -36,6 +50,10 @@ nav {
                 height: 0.7rem;
                 background-image: url('../images/icon-arrow-light.svg');
                 background-size: cover;
+            }
+
+            &:hover {
+                text-decoration: underline;
             }
         }
     }

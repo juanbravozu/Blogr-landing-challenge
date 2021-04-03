@@ -130,7 +130,7 @@ section {
   padding-right: 10%;
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   section {
     padding-left: 144px;
     padding-right: 144px;
@@ -208,17 +208,27 @@ nav {
   color: white;
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   nav {
     padding: 40px 144px;
   }
 }
 
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 55px;
+@media (min-width: 1024px) {
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 55px;
+  }
+  nav ul .submenu {
+    position: absolute;
+    display: block;
+    bottom: -20px;
+  }
+  nav ul .submenu a {
+    display: block;
+  }
 }
 
 nav ul li {
@@ -237,6 +247,10 @@ nav ul li::after {
   height: 0.7rem;
   background-image: url("../images/icon-arrow-light.svg");
   background-size: cover;
+}
+
+nav ul li:hover {
+  text-decoration: underline;
 }
 
 nav div {
@@ -299,7 +313,7 @@ footer {
   background-color: #25252d;
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   footer {
     padding: 80px 144px;
   }
@@ -343,12 +357,32 @@ footer a {
   text-align: center;
   font-weight: 700;
   cursor: pointer;
+  -webkit-transition-property: background-color color;
+  transition-property: background-color color;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+.btn:hover {
+  background-color: #ff7a85;
+  color: white;
 }
 
 .btn--outline {
   background: transparent;
   border: white 2px solid;
   color: white;
+}
+
+.btn--outline:hover {
+  background-color: white;
+  color: #ff7a85;
+}
+
+a:not(.btn):hover {
+  text-decoration: underline;
 }
 
 body {
