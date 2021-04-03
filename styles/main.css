@@ -60,6 +60,7 @@ h1, h2, h3 {
 
 h1 {
   font-size: 6rem;
+  text-align: center;
 }
 
 h2 {
@@ -139,8 +140,15 @@ section {
 
 #editor {
   color: #1f3f5b;
-  padding-top: 150px;
-  padding-bottom: 250px;
+  padding-top: 10%;
+  padding-bottom: 15%;
+}
+
+@media (min-width: 1024px) {
+  #editor {
+    padding-top: 150px;
+    padding-bottom: 250px;
+  }
 }
 
 #editor h2 {
@@ -178,8 +186,14 @@ section {
 }
 
 #tools {
-  padding: 200px 10%;
+  padding: 10%;
   color: #1f3f5b;
+}
+
+@media (min-width: 1024px) {
+  #tools {
+    padding: 200px 10%;
+  }
 }
 
 #tools img {
@@ -201,6 +215,9 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 40px 10%;
   margin: 0 auto;
   width: 100%;
@@ -208,27 +225,8 @@ nav {
   color: white;
 }
 
-@media (min-width: 1440px) {
-  nav {
-    padding: 40px 144px;
-  }
-}
-
-@media (min-width: 1024px) {
-  nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 55px;
-  }
-  nav ul .submenu {
-    position: absolute;
-    display: block;
-    bottom: -20px;
-  }
-  nav ul .submenu a {
-    display: block;
-  }
+nav .menu {
+  display: none;
 }
 
 nav ul li {
@@ -249,7 +247,7 @@ nav ul li::after {
   background-size: cover;
 }
 
-nav ul li:hover {
+nav ul li p:hover {
   text-decoration: underline;
 }
 
@@ -263,12 +261,83 @@ nav div {
   margin-left: auto;
 }
 
+nav button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
 nav a {
   color: white;
 }
 
 nav a:first-child {
   margin-right: 30px;
+}
+
+@media (min-width: 1440px) {
+  nav {
+    padding: 40px 144px;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav .menu {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  nav ul .submenu {
+    position: absolute;
+    display: block;
+    min-width: 160px;
+    top: 40px;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background-color: white;
+    -webkit-transition-property: -webkit-transform opacity;
+    transition-property: -webkit-transform opacity;
+    transition-property: transform opacity;
+    transition-property: transform opacity, -webkit-transform opacity;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+  }
+  nav ul .submenu a {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    color: #25252d;
+    margin: 15px 0;
+  }
+  nav ul .submenu a:hover {
+    font-weight: 600;
+    text-decoration: none;
+  }
+  nav ul .submenu--inactive {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    pointer-events: none;
+  }
+  nav button {
+    display: none;
+  }
 }
 
 #banner {
@@ -282,7 +351,7 @@ nav a:first-child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 240px 0 150px 0;
+  padding: 240px 10% 150px 10%;
   background-image: -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));
   background-image: linear-gradient(90deg, #FF8F70 0%, #FF3D54 100%);
   background-image: url("../images/bg-pattern-intro.svg"), -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));

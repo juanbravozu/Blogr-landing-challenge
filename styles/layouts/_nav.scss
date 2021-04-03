@@ -7,31 +7,15 @@ nav {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 40px 10%;
     margin: 0 auto;
     width: 100%;
     max-width: 1440px;
     color: $light;
 
-    @include respond-to('huge') {
-        padding: 40px 144px;
-    }
-
-    @include respond-to('large') {
-        ul {
-            display: flex;
-            margin: 0 55px;
-
-            .submenu {
-                position: absolute;
-                display: block;
-                bottom: -20px;
-
-                a{
-                    display: block;
-                }
-            }
-        }        
+    .menu {
+        display: none;
     }
 
     ul {
@@ -52,7 +36,7 @@ nav {
                 background-size: cover;
             }
 
-            &:hover {
+            p:hover {
                 text-decoration: underline;
             }
         }
@@ -64,11 +48,71 @@ nav {
         margin-left: auto;
     }
 
+    button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+
     a {
         color: $light;
 
         &:first-child {
             margin-right: 30px;
+        }
+    }
+
+    @include respond-to('huge') {
+        padding: 40px 144px;
+    }
+
+    @include respond-to('large') {
+
+        .menu {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        ul {
+            display: flex;
+
+            .submenu {
+                position: absolute;
+                display: block;
+                min-width: 160px;
+                top: 40px;
+                border-radius: 10px;
+                padding: 10px 25px;
+                background-color: $light;
+                transition-property: transform opacity;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-out;
+
+                a{
+                    display: block;
+                    width: fit-content;
+                    color: $dark;
+                    margin: 15px 0;
+
+                    &:hover {
+                        font-weight: 600;
+                        text-decoration: none;
+                    }
+                }
+
+                &--inactive {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                    pointer-events: none;
+                }
+            }
+        }     
+        
+        button {
+            display: none;
         }
     }
 }

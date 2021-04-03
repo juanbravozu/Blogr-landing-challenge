@@ -38,8 +38,13 @@ section {
 
 #editor {
     color: $blue ;
-    padding-top: 150px;
-    padding-bottom: 250px;
+    padding-top: 10%;
+    padding-bottom: 15%;
+
+    @include respond-to('large') {
+        padding-top: 150px;
+        padding-bottom: 250px;
+    }
 
     h2 {
         width: fit-content;
@@ -72,7 +77,11 @@ section {
 }
 
 #tools {
-    padding: 200px 10%;
+    padding: 10%;
+    
+    @include respond-to('large') {
+        padding: 200px 10%;
+    }
     color: $blue;
 
     img {
