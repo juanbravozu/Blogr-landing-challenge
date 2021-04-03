@@ -10,8 +10,14 @@
     color: $light;
 
     p {
-        font-size: 2rem;
-        margin: 30px;
+        font-size: 1.8rem;
+        text-align: center;
+        margin: 30px auto;
+
+        @include respond-to('medium') {
+            font-size: 2rem;
+            
+        }        
     }
 
     div {

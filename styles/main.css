@@ -59,8 +59,14 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 3.5rem;
   text-align: center;
+}
+
+@media (min-width: 769px) {
+  h1 {
+    font-size: 6rem;
+  }
 }
 
 h2 {
@@ -362,8 +368,15 @@ nav a:first-child {
 }
 
 #banner p {
-  font-size: 2rem;
-  margin: 30px;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 30px auto;
+}
+
+@media (min-width: 769px) {
+  #banner p {
+    font-size: 2rem;
+  }
 }
 
 #banner div {
@@ -377,6 +390,7 @@ nav a:first-child {
 }
 
 footer {
+  position: relative;
   padding: 80px 10%;
   border-top-right-radius: 100px;
   background-color: #25252d;
@@ -413,6 +427,26 @@ footer .wrapper div h4 {
 
 footer a {
   display: block;
+}
+
+footer .attribution {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  color: white;
+  background-color: #30303b;
+}
+
+footer .attribution p {
+  text-align: center;
+}
+
+footer .attribution a {
+  display: inline;
+  font-weight: 600;
+  color: inherit;
 }
 
 .btn {

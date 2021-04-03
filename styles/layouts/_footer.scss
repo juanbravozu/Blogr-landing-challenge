@@ -1,4 +1,5 @@
 footer {
+    position: relative;
     padding: 80px 10%;
     border-top-right-radius: 100px;
     background-color: $dark;
@@ -30,5 +31,25 @@ footer {
 
     a {
         display: block;
+    }
+
+    .attribution {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px;
+        color: $light;
+        background-color: lighten($dark, 5%);
+
+        p {
+            text-align: center;
+        }
+
+        a {
+            display: inline;
+            font-weight: 600;
+            color: inherit;
+        }
     }
 }
