@@ -264,8 +264,8 @@ nav a:first-child {
   padding: 240px 0 150px 0;
   background-image: -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));
   background-image: linear-gradient(90deg, #FF8F70 0%, #FF3D54 100%);
-  background-image: url("../../images/bg-pattern-intro.svg"), -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));
-  background-image: url("../../images/bg-pattern-intro.svg"), linear-gradient(90deg, #FF8F70 0%, #FF3D54 100%);
+  background-image: url("../images/bg-pattern-intro.svg"), -webkit-gradient(linear, left top, right top, from(#FF8F70), to(#FF3D54));
+  background-image: url("../images/bg-pattern-intro.svg"), linear-gradient(90deg, #FF8F70 0%, #FF3D54 100%);
   background-position: 20% center, 0 0;
   border-bottom-left-radius: 100px;
   color: white;
