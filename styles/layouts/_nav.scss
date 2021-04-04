@@ -90,6 +90,7 @@ nav {
                 transition-property: transform opacity;
                 transition-duration: 0.3s;
                 transition-timing-function: ease-out;
+                box-shadow: 5px 10px 20px rgba($color: $dark, $alpha: 0.15);
 
                 a{
                     display: block;
