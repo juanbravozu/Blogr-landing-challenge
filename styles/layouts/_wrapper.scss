@@ -2,18 +2,23 @@
     position: relative;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
     width: 100%;
     max-width: 1440px;
 
-    div {
+    img {
         width: 45%;
     }
 
-    img {
+    div, picture {
         position: relative;
-        width: 45%;
+        width: 100%;
+    }
+
+    picture img {
+        width: 100%;
     }
 
     h3 {
@@ -22,6 +27,15 @@
 
         &:first-child {
             margin-top: 0;
+        }
+    }
+
+    @include respond-to('medium') {
+        flex-direction: row;
+    
+        picture, div {
+            position: relative;
+            width: 45%;
         }
     }
 }
@@ -52,27 +66,73 @@ section {
     }
 
     div.wrapper {
-        margin-top: 100px;
+        margin-top: 10%;
+        flex-direction: column-reverse;
 
-        img {
-            position: absolute;
-            width: 80%;
-            right: -30%;
-            z-index: -1;
+        picture {
+            max-width: 500px;
+            margin-bottom: 50px;
+        }
+    }
+
+    @include respond-to('medium') {
+        div.wrapper {
+            margin-top: 100px;
+            flex-direction: row;
+    
+            picture {
+                left: 15%;
+                max-width: none;
+                transform: scale(1.8);
+                z-index: -1;
+            }
         }
     }
 }
 
 #infrastructure {
     display: flex;
-    max-height: 400px;
     border-top-right-radius: 100px;
     border-bottom-left-radius: 100px;
+    margin-top: 30%;
+    background-color: $dark;
     background-image: $blue-gradient;
+    background-image: url('../images/bg-pattern-circles.svg'), $blue-gradient;
+    background-repeat: no-repeat;
+    background-position: center -150px, center;
+    background-size: 100%;
     color: $light;
 
-    img {
-        top: 15px;
+    .wrapper {
+        padding: 250px 0 100px 0;
+
+        img {
+            position: absolute;
+            width: 100%;
+            max-width: 450px;
+            top: 0;
+            transform: translateY(-45%);
+        }
+    } 
+
+    @include respond-to('medium') {
+        background-size: 80%, 100%;
+        background-position: -75% 80%;     
+        max-height: 400px;
+        min-height: 345px;
+        margin: 0;
+        
+        .wrapper {
+            padding: 0;
+
+            img {
+                position: relative;
+                top: 15px;
+                width: 45%;
+                transform: unset;
+                max-width: unset;
+            }
+        }
     }
 }
 
@@ -85,7 +145,7 @@ section {
     color: $blue;
 
     img {
-        transform: scale(1.5);
-        left: -10%;
+        transform: scale(1.8);
+        right: 15%;
     }
 }

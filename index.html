@@ -82,7 +82,16 @@
           <h3>Robust content management</h3>
           <p>Flexible content management enables users to easily move through posts. Increase tge usability of yout blog by adding customized categories, sections, formats, or flow. With this functionality, you're in full control.</p>
         </div>
-        <img src="./images/illustration-editor-desktop.svg" alt="">
+        <!--<img src="./images/illustration-editor-mobile.svg" 
+            srcset="./images/illustration-editor-mobile.svg 406w,
+                    ./images/illustration-editor-desktop.svg 925w"
+            sizes="(min-width: 769px) 70vw, 100vw"
+            alt=""> !-->
+
+        <picture>
+          <source srcset="./images/illustration-editor-desktop.svg" media="(min-width: 769px)">
+          <img src="./images/illustration-editor-mobile.svg" alt="">
+        </picture>
       </div>
     </section>
     
@@ -145,5 +154,7 @@
       Coded by <a href="https://github.com/juanbravozu" target="_blank">Juan Bravo</a>.</p>
     </div>
   </footer>
+
+  <script src="./scripts/main.js"></script>
 </body>
 </html>
