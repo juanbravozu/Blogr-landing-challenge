@@ -10,7 +10,7 @@ footer {
 
     .wrapper {
         color: $light;
-        align-items: flex-start;
+        align-items: center;
 
         div, img, a {
             width: auto;
@@ -19,12 +19,22 @@ footer {
         }
 
         div {
+            margin: 40px 0;
+
             a {
                 margin: 20px 0;
             }
 
             h4 {
                 margin-bottom: 40px;
+            }
+        }
+
+        @include respond-to('medium') {
+            align-items: flex-start;
+
+            div {
+                margin: 0;
             }
         }
     }
