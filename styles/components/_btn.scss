@@ -13,9 +13,10 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
 
-    &:hover {
+    &:hover, &:focus {
         background-color: $light-red;
         color: $light;
+        outline: none;
     }
 
     &--outline {
@@ -23,7 +24,7 @@
         border: $light 2px solid;
         color: $light;
 
-        &:hover {
+        &:hover, &:focus {
             background-color: $light;
             color: $light-red;
         }

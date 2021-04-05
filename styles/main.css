@@ -331,6 +331,10 @@ nav {
   color: white;
 }
 
+nav .btn:focus {
+  outline: none;
+}
+
 nav .menu {
   position: fixed;
   display: none;
@@ -734,9 +738,10 @@ footer .attribution a {
           transition-timing-function: ease-out;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   background-color: #ff7a85;
   color: white;
+  outline: none;
 }
 
 .btn--outline {
@@ -745,7 +750,7 @@ footer .attribution a {
   color: white;
 }
 
-.btn--outline:hover {
+.btn--outline:hover, .btn--outline:focus {
   background-color: white;
   color: #ff7a85;
 }

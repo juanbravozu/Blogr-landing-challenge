@@ -14,6 +14,10 @@ nav {
     max-width: 1440px;
     color: $light;
 
+    .btn:focus {
+        outline: none;
+    }
+
     .menu {
         position: fixed;
         display: none;
