@@ -15,37 +15,126 @@ nav {
     color: $light;
 
     .menu {
-        display: none;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 120px;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
+        z-index: 10;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: $light;
+        box-shadow: 5px 10px 20px rgba($color: $dark, $alpha: 0.15);
+
+        div:not(.submenu) {
+            margin-top: auto;
+            border-top: $light-gray 1px solid;
+
+            a:first-child {
+                margin: 20px;
+            }
+
+            @media (max-width: 1024px) {
+                width: 100%;
+
+                a {
+                    font-weight: 600;
+                    color: $dark;
+
+                    &.btn {
+                        color: white;
+                        background-image: $red-gradient;
+                    }
+                }
+            }
+        }
     }
 
     ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        color: $dark;
+        
+        p, a {
+            position: relative;
+            width: fit-content;
+            font-weight: 600;
+            margin: 20px auto;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        li:first-child p {
+            margin-top: 0;
+        }
+
+        .submenu {
+            position: relative;
+            display: block;
+            border-radius: 10px;
+            padding: 0 25px;
+            background-color: rgba($color: $light-gray, $alpha: 0.3);
+            max-height: 0;
+            overflow-y: hidden;
+            transition: all 0.3s ease-out;
+
+            a {
+                display: block;
+                color: $dark-gray;
+            }
+        }
+
         li {
             position: relative;
+            width: 100%;
             margin: 0 30px;
             cursor: pointer;
 
-            &::after {
+            p::after {
                 content: '';
                 position: absolute;
                 display: block;
                 right: -2rem;
-                top: 30%;
+                top: 0.8rem;
                 width: 1.2rem;
                 height: 0.7rem;
-                background-image: url('../images/icon-arrow-light.svg');
+                background-image: url('../images/icon-arrow-dark.svg');
                 background-size: cover;
+                transition: transform 0.3s ease-out;
             }
 
             p:hover {
                 text-decoration: underline;
+            }
+
+            &.active {
+                p {
+                    color: $dark-gray;
+
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .submenu {
+                    padding: 15px 25px;
+                    max-height: 500px;
+                }
             }
         }
     }
 
     div {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        margin-left: auto;
     }
 
     button {
@@ -56,10 +145,6 @@ nav {
 
     a {
         color: $light;
-
-        &:first-child {
-            margin-right: 30px;
-        }
     }
 
     @include respond-to('huge') {
@@ -69,31 +154,39 @@ nav {
     @include respond-to('large') {
 
         .menu {
-            position: relative;
-            display: flex;
-            align-items: center;
+            position: static;
             justify-content: space-between;
             width: 100%;
+            padding: 0;
+            background-color: transparent;
+            flex-direction: row;
+            box-shadow: unset;
         }
 
         ul {
-            display: flex;
+            flex-direction: row;
+            color: $light;
+            width: auto;
+            
+            p, a {
+                font-weight: 300;
+                margin: 0;
+            }
 
             .submenu {
                 position: absolute;
-                display: block;
                 min-width: 160px;
                 top: 40px;
-                border-radius: 10px;
-                padding: 10px 25px;
                 background-color: $light;
                 transition-property: transform opacity;
                 transition-duration: 0.3s;
                 transition-timing-function: ease-out;
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
                 box-shadow: 5px 10px 20px rgba($color: $dark, $alpha: 0.15);
 
                 a{
-                    display: block;
                     width: fit-content;
                     color: $dark;
                     margin: 15px 0;
@@ -103,15 +196,41 @@ nav {
                         text-decoration: none;
                     }
                 }
+            }
 
-                &--inactive {
-                    opacity: 0;
-                    transform: translateY(-20px);
-                    pointer-events: none;
+            li{
+                width: auto;
+
+                p::after {
+                    background-image: url('../images/icon-arrow-light.svg');
+                }
+
+                &.active {
+
+                    p{
+                        color: $light;
+                    }
+
+                    .submenu {
+                        opacity: 1;
+                        transform: none;
+                        pointer-events: unset;
+                    }
                 }
             }
         }     
         
+        div {
+            flex-direction: row;
+            margin-left: auto;    
+        }
+
+        a {
+            &:first-child {
+                margin-right: 30px;
+            }    
+        }
+
         button {
             display: none;
         }
