@@ -114,6 +114,10 @@ section {
             top: 0;
             transform: translateY(-45%);
         }
+
+        h2 {
+            margin-bottom: 20px;
+        }
     } 
 
     @include respond-to('medium') {
