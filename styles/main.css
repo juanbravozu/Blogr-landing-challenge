@@ -333,9 +333,7 @@ nav {
 
 nav .menu {
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -353,6 +351,12 @@ nav .menu {
   background-color: white;
   -webkit-box-shadow: 5px 10px 20px rgba(37, 37, 45, 0.15);
           box-shadow: 5px 10px 20px rgba(37, 37, 45, 0.15);
+}
+
+nav .menu--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 nav .menu div:not(.submenu) {
@@ -500,6 +504,9 @@ nav a {
 
 @media (min-width: 1024px) {
   nav .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: static;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -513,6 +520,9 @@ nav a {
             flex-direction: row;
     -webkit-box-shadow: unset;
             box-shadow: unset;
+  }
+  nav .menu div:not(.submenu) {
+    border: none;
   }
   nav ul {
     -webkit-box-orient: horizontal;
