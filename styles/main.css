@@ -352,7 +352,6 @@ nav .menu {
   top: 120px;
   left: 5%;
   right: 5%;
-  bottom: 5%;
   z-index: 10;
   padding: 30px;
   border-radius: 10px;
@@ -421,6 +420,10 @@ nav ul p {
 
 nav ul li:first-child p {
   margin-top: 0;
+}
+
+nav ul li:last-child .submenu {
+  margin-bottom: 20px;
 }
 
 nav ul .submenu {

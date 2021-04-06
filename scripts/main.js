@@ -5,8 +5,7 @@ window.addEventListener('load', () => {
 
     navItems.forEach(item => {
         item.addEventListener('click', toggleMenu);
-        //item.addEventListener('focus', openMenu);
-        item.addEventListener('blur', closeMenu);
+        item.addEventListener('mouseenter', openMenu);
     });
 
     submenus.forEach(submenu => {
@@ -15,30 +14,43 @@ window.addEventListener('load', () => {
     });
 
     function openMenu(event) {
-        navItems.forEach(item => {
-            item.closest('li').classList.remove('active');
-        });
-
-        let target = event.target.closest('li');
-        target.classList.add('active');
+        if(window.innerWidth >= 1024) {
+            navItems.forEach(item => {
+                const li = item.closest('li');
+                const submenu = li.querySelector('.submenu');
+                submenu.style.transitionProperty = 'none';
+                setTimeout(() => {
+                    submenu.style.transitionProperty = 'all';
+                }, 300);
+                li.classList.remove('active');
+            });
+    
+            let target = event.target.closest('li');
+            target.querySelector('.submenu').style.transitionProperty = 'all';
+            target.classList.add('active');
+        }        
     }
 
     function closeMenu(event) {
-        let target = event.target.closest('li');
-        let submenuLinks = Array.from(target.querySelectorAll('a'));
-        target.classList.remove('active');
+        if(window.innerWidth >= 1024) {
+            let target = event.target.closest('li');
+            target.classList.remove('active');
+        }    
     }
 
     function toggleMenu(event) {
         let target = event.target.closest('li');
         const isActive = target.classList.contains('active');
-        console.log(target.classList);
         navItems.forEach(item => {
-            item.closest('li').classList.remove('active');
+            const li = item.closest('li');
+            const submenu = li.querySelector('.submenu');
+            submenu.style.transitionProperty = 'none';
+            setTimeout(() => {
+                submenu.style.transitionProperty = 'all';
+            }, 300);
+            li.classList.remove('active');
         });
-        
-        console.log(isActive);
-
+        target.querySelector('.submenu').style.transitionProperty = 'all';
         if(!isActive) target.classList.add('active');
     }
 
